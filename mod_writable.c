@@ -25,7 +25,11 @@ static int mod_writable_check_access(request_rec *r)
 	if (!r->filename )
 		return DECLINED;
 
-        /* If the file is writable then abort */
+    /* If this is not a PHP file then return */
+    if (strstr( r->filename, ".php" ) == NULL)
+        return DECLINED;
+
+    /* If the file is writable then abort */
 	int rval = access (r->filename, W_OK);
 
 	if (rval == 0) {
