@@ -31,3 +31,10 @@ Visiting your site should now show a HTTP 403 error, and the following logged:
     [Tue Feb 02 19:17:04.222904 2016] [:crit] [pid 8366]
     Refusing to serve the writeable file /var/www/html/index.php
 
+
+## BUGS
+
+I haven't tested on mod_rewrite situations, so that will need a check.
+
+Steve
+--
